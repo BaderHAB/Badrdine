@@ -1,0 +1,128 @@
+html ,body{height: 100%;}
+*{
+   font-family: "eurostile", sans-serif;
+}
+/*header*/
+#head{
+    align-items: center;
+    position: relative;
+}
+
+#navMenu{
+   top:-20px;
+   right: 80px;
+}
+.menu a{
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none  !important;
+    padding: 0 10px;
+    /* transition: 0.4s; */
+ 
+ }
+ .mostrar-menu,
+ .esconder-menu{
+    font-size:30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s; 
+ 
+ }
+ .mostrar-menu{
+    order: 1;
+ }
+ .menu a:hover,
+ .mostrar-menu:hover,
+ .esconder-menu:hover{
+    color: #6E07F3;
+ }
+#check{
+   display: none;
+}
+/*CONTENIDO*/
+
+#titulo1{
+   margin-top: 40px;
+   height: 12vh;
+   background-color: #6E07F3;
+   color: white;
+   clear: left;
+   justify-content: center;
+   align-items: center;
+}
+#info{
+   flex-direction: column;
+   text-align: center;
+   flex-grow: 0.1;
+}
+
+#projects{
+   min-height: 80vh;
+   height: 100%;
+   background-color: #6E07F3;
+   align-content: center;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+}
+
+.whiteblock{
+   border: 4px inset black;
+   background-color: white;
+   width: auto;
+   height: 70vh;
+}
+
+
+ 
+/*RESPOSINVE*/
+ @media (max-width: 768px) {
+   #titulo1 h2{
+      font-size: 25px;
+   }
+   #projects{
+      flex-direction: column;
+   }
+   #info h2{
+      font-size: 40px;
+   }
+   
+
+   #navMenu{
+      top:-20px;
+      right: 0px;
+   }
+    .mostrar-menu,
+    .esconder-menu{
+       display: block;
+    }
+    .menu{
+       position: fixed;
+       width: 100%;
+       height: 100vh;
+       background-color: #5BE9B9;
+       right:-100%; 
+       top:0;
+       text-align: center;
+       padding: 100px 0px;
+       z-index: 100;
+       transition: 0.8s;
+       margin-right: 0;
+    }
+    .menu a{
+       display: block;
+       padding: 20px ;
+    }
+    .esconder-menu{
+       position: absolute;
+       top:40px;
+       right: 40px;
+    }
+    #check:checked ~ .menu{
+       right: 0;
+    }
+    .mostrar-menu{
+       position: absolute;
+       right: 30px;
+    }
+    
+ }
