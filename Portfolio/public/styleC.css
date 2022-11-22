@@ -1,0 +1,41 @@
+html ,body{height: 100%;}
+*{
+   font-family: "eurostile", sans-serif;
+   margin: 0;
+   padding: 0;
+}
+#head{
+    height: 100px;
+    margin-bottom: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#ContactH{
+    align-items: center;
+    height: 100px;
+    justify-content: center;
+}
+
+#containerForm{
+    height: 600px;
+}
+
+#boxForm{
+    height: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+#boxForm button{
+    float: right;
+    color: #6E07F3;
+    border-color: #6E07F3;
+}
+#boxForm button:hover{
+    color: white;
+    background-color: #6E07F3;
+}

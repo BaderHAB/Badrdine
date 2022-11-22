@@ -66,6 +66,7 @@ html ,body{height: 100%;}
 }
 
 .whiteblock{
+   padding: 10px;
    border: 4px inset black;
    background-color: white;
    width: auto;
