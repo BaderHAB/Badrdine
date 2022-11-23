@@ -1,0 +1,60 @@
+html ,body{height: 100%;}
+*{
+   font-family: "eurostile", sans-serif;
+}
+
+
+#head{
+    padding-top: 10px;
+    border-bottom: 2px solid #17a2b8;
+    text-align: center;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: space-between;
+}
+#head h1{
+    color: #17a2b8;
+}
+#head a{
+    text-decoration: none;
+}
+
+#weeklyInfo{
+    height: 5vh;
+    background-color: #232f3e;
+    justify-content: center;
+}
+
+
+#weeklyInfo h3{
+    font-size: 25px;
+    color: white;
+    
+}
+
+/*OFERTAS*/
+#ofertas{
+    justify-content: space-evenly;
+    height: 550px;
+    align-content:center;
+    background-color: #f6f6f6;
+}
+
+#ofertas img {
+    width: 480px;
+    height: 320px;
+}
+
+#foot{
+    background-color: #232f3e;
+    height: 98px;
+}
+
+/*RESPONSIVE*/
+@media (max-width: 768px){
+    #weeklyInfo h3{
+        font-size: 14px;
+        color: white;
+        
+    }
+}
