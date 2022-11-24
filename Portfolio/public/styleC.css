@@ -4,6 +4,7 @@ html ,body{height: 100%;}
    margin: 0;
    padding: 0;
 }
+/*HEADER*/
 #head{
     height: 100px;
     margin-bottom: 50px;
@@ -11,31 +12,23 @@ html ,body{height: 100%;}
     align-items: center;
 }
 
-
 #ContactH{
     align-items: center;
     height: 100px;
     justify-content: center;
 }
 
-#containerForm{
-    height: 600px;
+/*FORM SECTION*/
+#formCont{
+    margin-top: 150px;
 }
-
-#boxForm{
-    height: 100%;
-    flex-wrap: wrap;
-    display: flex;
-    align-content: center;
-    flex-direction: column;
-    justify-content: center;
-}
-#boxForm button{
-    float: right;
+#submitB{
     color: #6E07F3;
     border-color: #6E07F3;
 }
-#boxForm button:hover{
+#submitB:hover{
     color: white;
     background-color: #6E07F3;
 }
+
+
