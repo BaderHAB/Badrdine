@@ -12,11 +12,9 @@ html ,body{height: 100%;}
     align-items:center;
     justify-content: space-evenly;
 }
-#head h1{
-    color: #17a2b8;
-}
 #head a{
     text-decoration: none;
+    color: #17a2b8;
 }
 /*body*/
 
@@ -34,7 +32,6 @@ html ,body{height: 100%;}
 }
 #Box div{
     display: flex;
-    border: 1px solid #17a2b8;
     min-height: 400px !important;
     align-content: center;
     justify-content: center;
@@ -56,14 +53,9 @@ html ,body{height: 100%;}
 }
 
 
-
-/*footer*/
-#foot{
-    background-color: #232f3e;
-    height: 85px;
-}
-
 @media (max-width: 768px){
-
+    #head h1{
+        font-size: 30px;
+    }
 }
 

@@ -1,16 +1,81 @@
 html ,body{height: 100%;}
 *{
-   font-family: "eurostile", sans-serif;
+    font-family: ShopifySans, Helvetica, Arial, sans-serif;
 }
 
 
 #head{
     padding-top: 10px;
-    border-bottom: 2px solid #17a2b8;
+    background-color:#6b7177;
+    border-bottom: 2px solid black;
 }
-#head h1{
-    color: #17a2b8;
+#head button{
+    color: white;
+    border-color: white;
 }
+
 #head a{
     text-decoration: none;
+    color: white;
+}
+.seleccion{
+    font-size: 15px;
+}
+/*FIRST SECTION*/
+.undHead{
+    height:500px;
+    flex-wrap: wrap;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    background-color: #aaaaaa;
+    border-bottom: 2px solid black;
+    justify-content: center;
+    color: black;
+    flex-shrink: 1;
+}
+.menu h4{
+    font-size: 40px;
+}
+.menu a{
+    color: white;
+}
+
+#categories {
+    height:500px;
+    border-left: 2px solid black;
+    background-image: url('/fonts/background.jpg');
+    background-size: cover;
+}
+
+#info{
+    height:48vh;
+    background-color: #666F88;
+}
+
+
+@media (max-width: 768px){
+    #head  h1{
+        font-size:32px;
+    }
+    .undHead{
+        flex-direction: column;
+        flex-shrink: 2;
+    }
+    .seleccion,#head button{
+        display: none;
+    }
+    .menu h4{
+        margin-top: 8px;
+        font-size: 25px;
+    }
+
+}
+
+@media (width: 768px){
+    .undHead{
+        height: 700px;
+    }
 }

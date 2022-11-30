@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Store</title>
+</head>
+<body>
+    <h1>Create a new store</h1>
+    <form method="POST"action="/stores">
+        <div>
+            <label for="name">Store name</label>
+            <input type="text" name="name" id="name" placeholder="store name">
+        </div>
+        <div>
+            <label for="owner">Owner</label>
+            <input type="text" name="owner" id="owner" placeholder="owner">
+        </div>
+        <div>
+            <label for="location">Location</label>
+            <input type="text" name="location" id="location" placeholder="location">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="email">
+        </div>
+        <button>Submit</button>
+    </form>
+    <a href="/stores">Undo changes</a>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Shop2You</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/styles.css">
     <script src="/js/jquery.js"></script>
@@ -14,15 +14,37 @@
     <header>
         <div class="container-fluid">
             <div id="head" class="row align-items-center justify-content-between">
-                <div class="col-3 text-center"><a href="/"><h1>E-commerce</h1></a></div>
-               <div class="col-6 text-right"> <a href="/login"><button class="btn btn-outline-info" >Bienvenido, Inicia Sesion</button></a></div>
-               <div class="w-100"></div>
-               
+                <div class="col-3 text-left"><h1><a href="/">Shop2You</a></h1></div>
+                <div class="seleccion col-2  text-center">
+                    <a href="/products">DISCOVER</a>
+                </div>
+                <div class="seleccion col-2  text-center">
+                    <a href="/stores">STORE</a>
+                </div>
+                <div class="seleccion col-2 text-center">
+                    <a href="/stores">CATEGORY</a>
+                </div>
+                <div class="col-3 text-right"> <a href="/login"><button class="btn btn-outline" >Bienvenido, Inicia Sesion</button></a></div>
+                <div class="w-100"></div>
             </div>
         </div>
     </header>
-
-    
-    
+    <section>
+        <div class="container-fluid">
+            <div class="undHead row ">
+                <div  class="menu col a">
+                    <h4>Welcome to Shop2You, the web for sellers and buyers.</h4>
+                    <p> Are you a seller? Create your store in seconds  <a href="/stores/new"><button class="button btn-dark">MORE!</button></a></p>
+                </div>
+                <div id="categories" class="col"></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container-fluid">
+            <div id="info" class="row">
+            </div>
+        </div>
+    </section>
 </body>
 </html>
