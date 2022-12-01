@@ -5,27 +5,27 @@ const Product = require('../models/product');
 const categories=['general','house','electronic'];
 
 
-router.get('/stores', async (req,res)=>{
+router.get('', async (req,res)=>{
     const stores = await Store.find({});
     res.render('stores/index', {stores})
 })
 
-router.get('/stores/new', (req,res) =>{
+router.get('/new', (req,res) =>{
     res.render('stores/new')
 })
 
-router.post('/stores', async (req,res)=>{
+router.post('', async (req,res)=>{
     const store =  new Store(req.body);
     await store.save();
     res.redirect('/stores')
 })
 
-router.delete('/stores/:id', async(req,res)=>{
+router.delete('/:id', async(req,res)=>{
     const store = await Store.findByIdAndDelete(req.params.id)
     res.redirect('/stores')
 }) 
 
-router.get('/stores/:id', async(req, res)=>{
+router.get('/:id', async(req, res)=>{
     const {id} = req.params;
     const store = await Store.findById(id).populate('products');
     res.render('stores/show', {store})
@@ -33,13 +33,13 @@ router.get('/stores/:id', async(req, res)=>{
 
 
 
-router.get('/stores/:id/product/new', async(req,res)=>{
+router.get('/:id/product/new', async(req,res)=>{
     const {id}= req.params
     const store = await Store.findById(id);
     res.render('products/new', {categories, store})
 })
 
-router.post('/stores/:id/products', async(req,res)=>{4
+router.post('/:id/products', async(req,res)=>{4
     const {id} = req.params;
     const store = await Store.findById(id);
     const {name, price, category}= req.body

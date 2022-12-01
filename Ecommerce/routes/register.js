@@ -4,7 +4,7 @@ const router = express.Router();
 
 
 router.get('/register', (req,res)=>{
-    res.render('register');
+    res.render('register/register');
 })
 
 

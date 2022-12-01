@@ -1,0 +1,58 @@
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    
+}
+*{
+    font-family: ShopifySans, Helvetica, Arial, sans-serif;
+}
+.head{
+    padding-top: 15px;
+    background-color: #8787fb;
+    color: white;
+}
+.create{
+    display: flex;
+    padding-top: 60px;
+    height:90.5vh;
+    background-color: #8787fb;
+    justify-content: center;
+}
+.form{
+    flex-wrap: wrap;
+    padding-top: 60px;
+    border-radius: 15px;
+    height: 70vh;
+    width: 60%;
+    background-color: #f8f8f8;
+    box-shadow: 0px 0px 10px black;
+    align-items:flex-start;
+    justify-content:end;
+    float: left;
+}
+.logoS{
+    margin-left: 10px;
+    width: 500px;
+    height: 90%;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+
+@media (max-width: 500px){
+    .form{
+        padding-top: 4px;
+        padding-right: 6px;
+        height: 74vh;
+    }
+    .logoS{
+        height: 50px;
+    }
+    .logoS h4{
+        font-size: 15px;
+    }
+}
+
+

@@ -5,6 +5,11 @@ const morgan = require('morgan');
 const { STATUS_CODES } = require('http');
 const app= express();
 const methodOverride= require('method-override');
+const CookieParser = require('cookie-parser');
+const session = require('express-session');
+const sessionOption = {secret: 'notsecret', resave:false, saveUninitialized: false}
+
+
 
 //ROUTER
 const errors= require('./routes/errorHandler')
@@ -13,14 +18,11 @@ const login = require('./routes/login')
 const register = require('./routes/register')
 const products = require('./routes/product')
 const stores = require('./routes/store')
+const cookies = require('./routes/cookies')
 
-//MODELS
-const Store = require('./models/store');
-const Product = require('./models/product');
-const categories=['general','house','electronic'];
 
 //DB CONNECTION
-mongoose.connect('mongodb+srv://Bader:w1a2t3e4r5@cluster0.eywmrzr.mongodb.net/store?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology:true});
+mongoose.connect('mongodb://127.0.0.1:27017/storetest3',{useNewUrlParser:true, useUnifiedTopology:true});
 const db = mongoose.connection;
 db.on('error', error=>console.log(error))
 db.once('open', ()=>{console.log('Connected to mongoose')})
@@ -34,6 +36,8 @@ app.set('views', path.join(__dirname, ('views')));
 app.use(express.urlencoded({extended:true}));
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
+app.use(CookieParser('secret'));
+app.use(session(sessionOption))
 
 
 
@@ -44,14 +48,29 @@ app.use('/',login)
 
 app.use('/', register)
 
+app.get('/o', (req,res)=>{
+    const {name} = req.cookies;
+    res.send(`Hey there ${name}`)
+})
+
+app.get('/viewc', (req,res)=>{
+    if(req.session.count){
+        req.session.count +=1;
+    }else{
+        req.session.count = 1;
+    }
+    res.send(`Page viewed ${req.session.count}`)
+})
+
 //PRODUCT
-app.use('/',products)
+app.use('/products',products)
 
 //STORE
-app.use('/', stores)
+app.use('/stores', stores)
 
 //Error Handling
 app.use('*',errors);
+
 
 //Deploy
 app.listen((process.env.PORT ||3000) , (req,res)=>{
