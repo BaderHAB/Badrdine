@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/product')
 const categories=['general','house','electronic'];
-const methodOverride= require('method-override');
 const Store = require('../models/store');
 
 

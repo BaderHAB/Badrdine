@@ -3,6 +3,8 @@ const router = express.Router();
 const Store = require('../models/store');
 const Product = require('../models/product');
 const categories=['general','house','electronic'];
+const flash = require('connect-flash')
+
 
 
 router.get('', async (req,res)=>{
@@ -16,7 +18,9 @@ router.get('/new', (req,res) =>{
 
 router.post('', async (req,res)=>{
     const store =  new Store(req.body);
+    console.log(req.body)
     await store.save();
+    req.flash('success', 'Store created succesfully!')
     res.redirect('/stores')
 })
 
@@ -27,6 +31,7 @@ router.delete('/:id', async(req,res)=>{
 
 router.get('/:id', async(req, res)=>{
     const {id} = req.params;
+    console.log(req.params)
     const store = await Store.findById(id).populate('products');
     res.render('stores/show', {store})
 })

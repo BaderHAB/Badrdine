@@ -7,8 +7,10 @@ const app= express();
 const methodOverride= require('method-override');
 const CookieParser = require('cookie-parser');
 const session = require('express-session');
-const sessionOption = {secret: 'notsecret', resave:false, saveUninitialized: false}
-
+const sessionOption = {secret: 'notsecret', resave:false, saveUninitialized: true}
+const flash = require('connect-flash')
+const bcrypt = require('bcrypt');
+const User = require('./models/user');
 
 
 //ROUTER
@@ -19,10 +21,11 @@ const register = require('./routes/register')
 const products = require('./routes/product')
 const stores = require('./routes/store')
 const cookies = require('./routes/cookies')
+const logout = require ('./routes/logout')
 
 
 //DB CONNECTION
-mongoose.connect('mongodb://127.0.0.1:27017/storetest3',{useNewUrlParser:true, useUnifiedTopology:true});
+mongoose.connect('mongodb://127.0.0.1:27017/testingLog3',{useNewUrlParser:true, useUnifiedTopology:true});
 const db = mongoose.connection;
 db.on('error', error=>console.log(error))
 db.once('open', ()=>{console.log('Connected to mongoose')})
@@ -38,7 +41,12 @@ app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
 app.use(CookieParser('secret'));
 app.use(session(sessionOption))
-
+app.use(flash());
+app.use((req,res, next)=>{
+    res.locals.success = req.flash('success')
+    res.locals.error= req.flash('error')
+    next();
+})
 
 
 //ROUTES DEPLOYMENT
@@ -48,25 +56,24 @@ app.use('/',login)
 
 app.use('/', register)
 
-app.get('/o', (req,res)=>{
-    const {name} = req.cookies;
-    res.send(`Hey there ${name}`)
-})
-
-app.get('/viewc', (req,res)=>{
-    if(req.session.count){
-        req.session.count +=1;
-    }else{
-        req.session.count = 1;
-    }
-    res.send(`Page viewed ${req.session.count}`)
-})
+app.use('/', logout)
 
 //PRODUCT
 app.use('/products',products)
 
 //STORE
 app.use('/stores', stores)
+
+app.get('/secret',(req,res)=>{
+    if(!req.session.user_id){
+        return res.redirect('/login');
+    }else{
+    res.render('logout/logout')
+    }
+})
+
+
+
 
 //Error Handling
 app.use('*',errors);

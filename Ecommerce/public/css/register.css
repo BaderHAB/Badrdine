@@ -1,0 +1,54 @@
+html ,body{height: 100%;}
+
+body .fullbody{
+    height: 100%;
+    background-color: #8787fb;
+    opacity: 0.8;
+    background-image:  radial-gradient(#000000 0.5px, transparent 0.5px), radial-gradient(#000000 0.5px, #8787fb 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;
+}
+.box{
+    display: flex;
+    justify-content: center;
+    height: 100%
+}
+.regForm{
+    position: fixed;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 80%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px gray;
+}
+.title{
+    margin-bottom: 40px;
+}
+
+.regForm button{
+    margin-top: 10px;
+}
+
+.regForm button:hover{
+    background-color: #8787fb;
+    border-color: #8787fb;
+}
+.regForm a{
+    color: black;
+}
+
+.regForm a:hover{
+    color: #8787fb;
+    text-decoration: none;
+}
+
+@media (max-width:425px){
+    .regForm{
+        height: 88%;
+        width: 72%;
+    }
+}
+
