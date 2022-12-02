@@ -25,7 +25,7 @@ const logout = require ('./routes/logout')
 
 
 //DB CONNECTION
-mongoose.connect('mongodb://127.0.0.1:27017/testingLog3',{useNewUrlParser:true, useUnifiedTopology:true});
+mongoose.connect('mongodb+srv://Bader:w1a2t3e4r5@cluster0.eywmrzr.mongodb.net/store?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology:true});
 const db = mongoose.connection;
 db.on('error', error=>console.log(error))
 db.once('open', ()=>{console.log('Connected to mongoose')})
