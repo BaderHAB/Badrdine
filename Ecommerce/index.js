@@ -9,7 +9,7 @@ const CookieParser = require('cookie-parser');
 const session = require('express-session');
 const sessionOption = {secret: 'notsecret', resave:false, saveUninitialized: true}
 const flash = require('connect-flash')
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const User = require('./models/user');
 
 
@@ -25,7 +25,7 @@ const logout = require ('./routes/logout')
 
 
 //DB CONNECTION
-mongoose.connect('mongodb+srv://Bader:w1a2t3e4r5@cluster0.eywmrzr.mongodb.net/store?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology:true});
+mongoose.connect('mongodb://127.0.0.1:27017/testingLog3',{useNewUrlParser:true, useUnifiedTopology:true});
 const db = mongoose.connection;
 db.on('error', error=>console.log(error))
 db.once('open', ()=>{console.log('Connected to mongoose')})
