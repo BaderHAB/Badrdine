@@ -14,7 +14,6 @@ router.get('/register', (req,res)=>{
 router.post('/register', async (req,res)=>{
     const {password, username, email} =  req.body
     const usedEmail = await User.findOne({email:email})
-    console.log(usedEmail);
     if(!usedEmail){
         const hash = await bcrypt.hash(password, 12);
         const user = new User({
