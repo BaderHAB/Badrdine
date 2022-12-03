@@ -10,7 +10,7 @@ router.get('/login', (req,res)=>{
 })
 
 router.post('/login', async(req,res)=>{
-    const {password, username, email} = req.body
+    const {password, username} = req.body
     const user = await User.findOne({username})
     if(!user){
         res.render('login/login')
