@@ -21,10 +21,14 @@ router.post('', async(req,res)=>{
 })
 
 router.get('/:id', async (req,res)=>{
+    try{
     const {id} = req.params;
     const product = await Product.findById(id).populate('store', 'name')
     console.log(product)
     res.render('products/details', {product});
+    }catch{
+    res.render('error404')
+    }
 })
 
 router.get('/:id/edit', async(req,res)=>{

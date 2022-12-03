@@ -77,6 +77,7 @@ app.get('/secret',(req,res)=>{
 
 //Error Handling
 app.use('*',errors);
+app.use('stores/*',errors);
 
 
 //Deploy
