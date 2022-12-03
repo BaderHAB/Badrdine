@@ -64,14 +64,14 @@ app.use('/products',products)
 //STORE
 app.use('/stores', stores)
 
-app.get('/secret',(req,res)=>{
+/* app.get('/secret',(req,res)=>{
     if(!req.session.user_id){
         return res.redirect('/login');
     }else{
     res.render('logout/logout')
     }
 })
-
+ */
 
 
 
