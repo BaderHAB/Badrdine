@@ -4,7 +4,8 @@ const Store = require('../models/store');
 const Product = require('../models/product');
 const categories=['general','house','electronic'];
 const flash = require('connect-flash')
-
+const requireLogin = require('../routes/requireLogin');
+const { raw } = require('body-parser');
 
 
 router.get('', async (req,res)=>{
@@ -12,12 +13,8 @@ router.get('', async (req,res)=>{
     res.render('stores/index', {stores})
 })
 
-router.get('/new', (req,res) =>{
-    if(!req.session.user_id){
-        return res.render('needTo/needTo');
-    }else{
+router.get('/new',requireLogin, (req,res) =>{
         res.render('stores/new')
-    }
 })
 
 router.post('', async (req,res)=>{

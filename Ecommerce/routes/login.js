@@ -2,18 +2,21 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose')
 const User = require('../models/user');
-const bcrypt = require('bcryptjs')
+const passport = require('passport')
 const session = require('express-session');
 
+
 router.get('/login', (req,res)=>{
-    res.render('login/login')
+    res.render('users/login')
 })
 
-router.post('/login', async(req,res)=>{
-    const {password, username} = req.body
-    const user = await User.findOne({username})
+router.post('/login', passport.authenticate('local', {failureFlash: true, failureRedirect:'/login'}), async(req,res)=>{
+    req.flash('success','Welcome back')
+    res.redirect('/stores')
+
+    /* const user = await User.findOne({username})
     if(!user){
-        res.render('login/login')
+        res.render('users/login')
     }else{
         const loginRes = await bcrypt.compare(password, user.password)
         if(loginRes){
@@ -22,7 +25,7 @@ router.post('/login', async(req,res)=>{
         }else{
             res.redirect('/login')
         }  
-    } 
+    }  */
 })
 
 

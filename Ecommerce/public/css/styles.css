@@ -6,7 +6,7 @@ html ,body{height: 100%;}
 
 #head{
     padding-top: 10px;
-    background-color:#212529;
+    background-color:rgb(33, 37, 41);;
     border-bottom: 2px solid black;
 }
 #head button{
@@ -30,7 +30,7 @@ html ,body{height: 100%;}
     display: flex;
     flex-direction: column;
     height: 500px;
-    background-color: #8787fb;
+    background-color: #8787FB;
     border-bottom: 2px solid black;
     justify-content: center;
     color: white;
@@ -48,6 +48,7 @@ html ,body{height: 100%;}
     border-left: 2px solid black;
     background-image: url('/fonts/background.jpg');
     background-size: cover;
+    border-bottom: 2px solid black;
 }
 
 .info{
@@ -55,6 +56,19 @@ html ,body{height: 100%;}
     background-color: white;
 
 
+}
+.footer{
+    background-color: black;
+    height:8vh;
+}
+
+.about{
+    height: 100%;
+    align-content: center;
+}
+
+.footer a {
+    color: white;
 }
 
 

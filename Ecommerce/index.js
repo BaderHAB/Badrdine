@@ -11,6 +11,9 @@ const sessionOption = {secret: 'notsecret', resave:false, saveUninitialized: tru
 const flash = require('connect-flash')
 const bcrypt = require('bcryptjs');
 const User = require('./models/user');
+const passport = require('passport')
+const LocalStrategy = require('passport-local')
+const catchAsync = require('./utils/catchAsync')
 
 
 //ROUTER
@@ -21,7 +24,8 @@ const register = require('./routes/register')
 const products = require('./routes/product')
 const stores = require('./routes/store')
 const cookies = require('./routes/cookies')
-const logout = require ('./routes/logout')
+const logout = require ('./routes/logout');
+const user = require('./models/user');
 
 
 //DB CONNECTION
@@ -48,6 +52,13 @@ app.use((req,res, next)=>{
     next();
 })
 
+//PASSPORT
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 //ROUTES DEPLOYMENT
 app.use('/', home)
@@ -63,16 +74,6 @@ app.use('/products',products)
 
 //STORE
 app.use('/stores', stores)
-
-/* app.get('/secret',(req,res)=>{
-    if(!req.session.user_id){
-        return res.redirect('/login');
-    }else{
-    res.render('logout/logout')
-    }
-})
- */
-
 
 
 //Error Handling
