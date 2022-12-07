@@ -3,7 +3,10 @@ html ,body{height: 100%;}
     font-family: ShopifySans, Helvetica, Arial, sans-serif;
 }
 
-
+.alert{
+    position: absolute;
+    right: 180px;
+}
 #head{
     padding-top: 10px;
     background-color:rgb(33, 37, 41);;
@@ -20,6 +23,10 @@ html ,body{height: 100%;}
 }
 .seleccion{
     font-size: 15px;
+}
+.menuDesp{
+    display: none;
+
 }
 /*FIRST SECTION*/
 .undHead{
@@ -54,8 +61,6 @@ html ,body{height: 100%;}
 .info{
     height:48vh;
     background-color: white;
-
-
 }
 .footer{
     background-color: black;
@@ -72,7 +77,7 @@ html ,body{height: 100%;}
 }
 
 
-@media (max-width: 768px){
+@media (max-width: 750px){
     #head  h1{
         font-size:32px;
     }
@@ -87,11 +92,18 @@ html ,body{height: 100%;}
         margin-top: 8px;
         font-size: 25px;
     }
+    .menuDesp{
+        width: 20px;
+        height: 20px;
+    }
+    .info h1{
+        font-size: 28px;
+    }
 
 }
 
 @media (width: 768px){
-    .undHead{
-        height: 700px;
+    .seleccion{
+        font-size: 14px;
     }
 }

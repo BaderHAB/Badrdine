@@ -1,0 +1,27 @@
+<header>
+    <div class="container-fluid">
+        <div id="head" class="row align-items-center justify-content-between">
+            <div class="col-3 text-left"><h1><a href="/">Shop2You</a></h1></div>
+            <div class="seleccion col-2  text-center">
+                <a href="/products">DISCOVER</a>
+            </div>
+            <div class="seleccion col-2  text-center">
+                <a href="/stores">SHOPS</a>
+            </div>
+            <div class="seleccion col-2 text-center">
+                <a href="/products/categories">CATEGORIES</a>
+            </div>
+            <div class="col-3 text-right"> 
+                <% if(!currentUser){ %> 
+                    <a href="/login"><button class="btn btn-outline" >Welcome, Login!</button></a>
+                <% }else if(currentUser) { %> 
+                    <a href="/logout"><button class="btn btn-outline">Click to Logout</button></a>
+                    <% } %> 
+                </div>
+
+            <div class="menuDesp col-2 text-center">
+                <img class="desplegable" src="\fonts\menu.png" alt="menu">
+            </div>
+        </div>
+    </div>
+</header>

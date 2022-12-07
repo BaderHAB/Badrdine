@@ -11,30 +11,14 @@
     <script src="/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <header>
-        <div class="container-fluid">
-            <div id="head" class="row align-items-center justify-content-between">
-                <div class="col-3 text-left"><h1><a href="/">Shop2You</a></h1></div>
-                <div class="seleccion col-2  text-center">
-                    <a href="/products">DISCOVER</a>
-                </div>
-                <div class="seleccion col-2  text-center">
-                    <a href="/stores">STORE</a>
-                </div>
-                <div class="seleccion col-2 text-center">
-                    <a href="/stores">CATEGORY</a>
-                </div>
-                <div class="col-3 text-right"> <a href="/login"><button class="btn btn-outline" >Welcome, Login!</button></a></div>
-                <div class="w-100"></div>
-            </div>
-        </div>
-    </header>
+    <%- include('../partials/flash') %> 
+    <%- include('../partials/nav') %> 
     <section>
         <div class="container-fluid">
             <div class="undHead row ">
                 <div  class="menu col a">
                     <h4>Welcome to Shop2You, the web for sellers and buyers.</h4>
-                    <p> Are you a seller? Create your own store in seconds  <a href="/stores/new"><button class="button btn-dark">START NOW!</button></a></p>
+                    <p> Are you a seller? Create your own SHOP in seconds  <a href="/stores/new"><button class="button btn-dark">START NOW!</button></a></p>
                 </div>
                 <div class="categories col"></div>
             </div>
@@ -49,16 +33,6 @@
             </div>
         </div>
     </section>
-    <footer>
-        <div class="footer container-fluid">
-            <div class="about row">
-                <div class="col text-center">
-                    <a href="">About Us</a></div>
-                <div class="col text-center"><a href="">Legal Terms</a></div>
-                <div class="col text-center"><a href="">Help</a></div>
-            </div>
-
-        </div>
-    </footer>
+    <%- include('../partials/footes') %> 
 </body>
 </html>

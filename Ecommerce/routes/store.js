@@ -5,7 +5,7 @@ const Product = require('../models/product');
 const categories=['general','house','electronic'];
 const flash = require('connect-flash')
 const requireLogin = require('../routes/requireLogin');
-const { raw } = require('body-parser');
+
 
 
 router.get('', async (req,res)=>{
@@ -17,7 +17,7 @@ router.get('/new',requireLogin, (req,res) =>{
         res.render('stores/new')
 })
 
-router.post('', async (req,res)=>{
+router.post('', requireLogin, async (req,res)=>{
     const store =  new Store(req.body);
     console.log(req.body)
     await store.save();

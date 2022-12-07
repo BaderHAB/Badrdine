@@ -12,7 +12,7 @@ router.get('/login', (req,res)=>{
 
 router.post('/login', passport.authenticate('local', {failureFlash: true, failureRedirect:'/login'}), async(req,res)=>{
     req.flash('success','Welcome back')
-    res.redirect('/stores')
+    res.redirect('/')
 
     /* const user = await User.findOne({username})
     if(!user){

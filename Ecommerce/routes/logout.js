@@ -3,10 +3,15 @@ const router = express.Router();
 const session = require('express-session');
 
 
-router.post('/logout',(req,res)=>{
-    req.session.user_id=null;
-    res.redirect('/login');
-})
+router.get('/logout', function(req, res, next) {
+    req.logout(function(err) {
+      if (err) { return next(err); }
+      else{
+        res.redirect('/');
+      }
+    });
+  });
+
 
 
 

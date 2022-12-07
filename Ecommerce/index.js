@@ -9,11 +9,11 @@ const CookieParser = require('cookie-parser');
 const session = require('express-session');
 const sessionOption = {secret: 'notsecret', resave:false, saveUninitialized: true}
 const flash = require('connect-flash')
-const bcrypt = require('bcryptjs');
 const User = require('./models/user');
 const passport = require('passport')
 const LocalStrategy = require('passport-local')
 const catchAsync = require('./utils/catchAsync')
+
 
 
 //ROUTER
@@ -47,6 +47,7 @@ app.use(CookieParser('secret'));
 app.use(session(sessionOption))
 app.use(flash());
 app.use((req,res, next)=>{
+    res.locals.currentUser = req.user;
     res.locals.success = req.flash('success')
     res.locals.error= req.flash('error')
     next();

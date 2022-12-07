@@ -17,7 +17,7 @@ router.post('/register', async (req,res)=>{
     req.flash('success','Welcome to Shop2You')
     res.redirect('/')
     }catch(e){
-        req.flash('error', e.message)
+        req.flash('error', 'Username or email already in use')
         res.redirect('/register')
     }
 })

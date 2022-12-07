@@ -44,4 +44,8 @@ router.put('/:id', async(req,res)=>{
     res.redirect(`/products/${product._id}`)
 })
 
+router.get('/categories', (req,res)=>{
+    res.render('products/categories')
+})
+
 module.exports= router;
