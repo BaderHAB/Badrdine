@@ -81,6 +81,8 @@ app.use('/stores', stores)
 app.use('*',errors);
 app.use('stores/*',errors);
 
+app.get('/favicon.ico', (req, res) => res.status(204));
+
 
 //Deploy
 app.listen((process.env.PORT ||3000) , (req,res)=>{
