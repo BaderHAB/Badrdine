@@ -7,20 +7,36 @@ html ,body{height: 100%;}
     position: absolute;
     right: 180px;
 }
-#head{
+.head{
     padding-top: 10px;
     background-color:rgb(33, 37, 41);;
     border-bottom: 2px solid black;
+    flex-direction: row;
+
 }
-#head button{
+.head .seleccion{
+    max-width: 150px;
+}
+.head button{
     color: white;
     border-color: white;
 }
 
-#head a{
+.head a{
     text-decoration: none;
     color: white;
 }
+.head button:hover{
+    color: white;
+    border-color: white;
+}
+
+.head a:hover{
+    text-decoration: none;
+    color: white;
+} 
+
+/**/
 .seleccion{
     font-size: 15px;
 }
@@ -63,8 +79,11 @@ html ,body{height: 100%;}
     background-color: white;
 }
 .footer{
+    position: fixed;
+    bottom: 0;
     background-color: black;
-    height:8vh;
+    height:50px;
+    display: block;
 }
 
 .about{
@@ -85,7 +104,7 @@ html ,body{height: 100%;}
         flex-direction: column;
         flex-shrink: 2;
     }
-    .seleccion,#head button{
+    .seleccion,.head button,.head form{
         display: none;
     }
     .menu h4{
@@ -104,6 +123,6 @@ html ,body{height: 100%;}
 
 @media (width: 768px){
     .seleccion{
-        font-size: 14px;
+        font-size: 10px;
     }
 }

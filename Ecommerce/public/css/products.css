@@ -1,0 +1,52 @@
+/* body {
+    height: 900px;
+    overflow-y: hidden;
+    overflow-x: hidden; /* hides the horizontal scroll bar */
+.tiles{
+    padding: 10px 10px;
+    margin-bottom: 0;
+    background-color: gainsboro;
+    border-bottom: 1px solid black;
+}
+.resultados{
+    height: 78vh;
+}
+.caja{
+    height: 100%;
+}
+.ajustes{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+} 
+.filtro{
+    
+    padding-top: 5px;
+    background-color: gainsboro;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+.product{
+    padding-top: 5px;
+    display: inline-block;
+    width: 120px;
+    height: fit-content;
+}
+
+.ajustes a{
+    color: black;
+}
+.ajustes a:hover{
+    color: black;
+}
+body img {
+    width: 90px;
+    background-color: gray;
+}
+/* 
+@media (max-width:768px){
+    .ajustes h5{
+        font-size: 9px;
+        
+    }
+}  */

@@ -62,7 +62,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 //ROUTES DEPLOYMENT
-app.use('/', home)
+app.use('', home)
 
 app.use('/',login)
 

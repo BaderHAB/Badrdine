@@ -48,4 +48,6 @@ router.get('/categories', (req,res)=>{
     res.render('products/categories')
 })
 
+
+
 module.exports= router;

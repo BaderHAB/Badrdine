@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="/css/products.css">
+    <%- include('../partials/styles') %> 
+</head>
+<body>
+    <%- include('../partials/nav') %>
+    <h4 class="tiles text-center"><strong>SEARCH RESULTS</strong></h4>
+    <section>
+    <div class="resultados container-fluid">
+        <div class="caja row">
+            <div class="filtro col-3">
+                <h5><strong>Order by: </strong></h5>
+                <form action="/search" method="post">
+                <label for="price">Price</label>
+                <input type="radio" name="filter">
+                <br>
+                <label for="price">Reviews</label>
+                <input type="radio" name="filter">
+                <br>
+                <label for="price">Sold units</label>
+                <input type="radio" name="filter">
+                <br>
+                <label for="price">Shop reviews</label>
+                <input type="radio" name="filter">
+                <br>
+                <button class="btn btn-dark nav-link disabled">FILTER</button>
+                </form>
+            </div>
+            <div class="ajustes col-9">
+                    <% for(product of allProduct){ %> 
+                        <div class="product">
+                            <a href="/products/<%= product._id %> "><img src="/fonts/ordenador2.jpg" alt="productLogo"></a>
+                            <h5><%= product.name %> </h5>
+                            <h6>Price: <%= product.price %>€</h6>
+                        </div>
+                    <% } %>  
+            </div>
+        </div>
+    </div>
+    </section>
+    <%- include('../partials/footes') %> 
+</body>
+</html>

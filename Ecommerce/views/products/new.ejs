@@ -13,7 +13,7 @@
         <label for="name">Product name</label>
         <input type="text" name="name" placeholder="product name" required>
         <label for="price">Price(€)</label>
-        <input type="number" name="price" placeholder="product price" required>
+        <input type="number" name="price" placeholder="product price" step="0.01" required>
         <label for="category">Select category</label>
         <select name="category" id="category" >
             <% for(let category of categories){%> 
