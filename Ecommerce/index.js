@@ -29,7 +29,7 @@ const user = require('./models/user');
 
 
 //DB CONNECTION
-mongoose.connect('mongodb+srv://Bader:w1a2t3e4r5@cluster0.eywmrzr.mongodb.net/store?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology:true});
+mongoose.connect('mongodb+srv://Bader:w1a2t3e4r5@cluster0.eywmrzr.mongodb.net/store?retryWrites=true&w=majority');
 const db = mongoose.connection;
 db.on('error', error=>console.log(error), mongoose.connection)
 db.once('open', ()=>{console.log('Connected to mongoose')})
