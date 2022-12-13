@@ -6,7 +6,7 @@ const { STATUS_CODES } = require('http');
 const app= express();
 const methodOverride= require('method-override');
 const CookieParser = require('cookie-parser');
-const session = require('express-session');
+const session = require('cookie-session');
 const sessionOption = {secret: 'notsecret', resave:false, saveUninitialized: true}
 const flash = require('connect-flash')
 const User = require('./models/user');
@@ -29,7 +29,7 @@ const user = require('./models/user');
 
 
 //DB CONNECTION
-mongoose.connect('mongodb+srv://Bader:w1a2t3e4r5@cluster0.eywmrzr.mongodb.net/store?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://Bader:w1a2t3e4r5@cluster0.eywmrzr.mongodb.net/store?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology:true});
 const db = mongoose.connection;
 db.on('error', error=>console.log(error), mongoose.connection)
 db.once('open', ()=>{console.log('Connected to mongoose')})
