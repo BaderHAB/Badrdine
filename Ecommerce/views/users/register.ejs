@@ -5,26 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
+    <%- include('../partials/styles') %>
     <link rel="stylesheet" href="/css/register.css">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-
+    <script defer src="/js/validation.js"></script>
 </head>
 <body>
     <div class="fullbody">
         <div class="box container-fluid">
             <div class="regForm row">
                 <form action="/register" method="POST" class="form-valid">
+                <div class="col text-center">
+                    <%- include('../partials/flash') %>
+                    <a href="/"><img src="/fonts/logo2.png"  style="width: 6rem;" alt=""></a> 
+                </div>
                 <div class="title col">
-                    <%- include('../partials/flash') %> 
                     <h2>Create new account</h2>
                     <div style="height: 2px; background-color: #EAEFF5"></div>
                 </div>
                 <div class="col form-group">
                     <label class="form-label"for="username">Username: </label>
-                    <input type="text" name="username" id="username" placeholder="username" class="form-control" required>
-                    <small id="passwordHelpInline" class="text-muted">
+                    <input type="text" name="username" id="username" placeholder="username" class="form-control" pattern="[a-zA-Z0-9]+" title="Only alphanumerical characters" required>
+                    <small id="usernamHelp" class="text-muted">
                         Only alphanumeric characters allowed
                     </small>
                 </div>
@@ -34,8 +35,8 @@
                 </div>
                 <div class="col form-group">
                     <label for="passwrod">Password: </label>
-                    <input type="password" name="password" id="password" placeholder="password" class="form-control" required>
-                    <small id="passwordHelpInline" class="text-muted">
+                    <input type="password" name="password" id="password" placeholder="password" class="form-control" <input type="text" pattern="[a-zA-Z0-9]{8,20}" title="Must be 8-20 characters" required>
+                    <small id="passwordHelp" class="text-muted">
                         Must be 8-20 characters long.
                     </small>
                 </div>

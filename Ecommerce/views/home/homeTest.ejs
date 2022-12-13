@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop2You</title>
+    <%- include('../partials/styles') %> 
+</head>
+<body>
+    <%- include('../partials/flash') %> 
+    <%- include('../partials/nav') %> 
+    <section>
+        <div class="container-fluid">
+            <div class="portada row">
+               <div class="col">
+                <h2><strong>Create your store now</strong></h2>
+                <a href="/stores/new"><button class="btn btn-outline-success">Show me how</button></a>
+               </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container-fluid">
+            <div class="services row">
+                <div class="infos card col-sm-3" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>BUY</b></h5>
+                        <p class="card-text">Buy the best products with the better prices</p>
+                    </div>
+                </div>
+                <div class="infos card col-sm-3" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>SELL</b></h5>
+                        <p class="card-text">Get to know and sell to a huge online community</p>
+                    </div>
+                </div>
+                <div class="infos card col-sm-3" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>DISCOVER</b></h5>
+                        <p class="card-text">Discover and meet people in your same bussiness</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include('../partials/footes') %> 
+</body>
+</html>

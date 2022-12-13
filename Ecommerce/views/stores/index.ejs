@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <%- include('../partials/styles') %>
     <link rel="stylesheet" href="/css/stores.css">
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
     <title>All Stores</title>
 </head>
 <body>
@@ -32,20 +29,20 @@
     </div>
     <div class="info container-fluid">
         <div class="stores row">
-            <div class="col capsulas2">
+            <div class="col-3 capsulas2">
               <h5 class="text-center"><strong>XMAS SPECIALS</strong></h5>
                 <% for(let store of stores){ %> 
                     <button class="btn btn-light"><a class="shop" href="/stores/<%= store._id %>"><%= store.name %> by <%= store.owner %> </a></button>
                 <% } %> 
             </div>
-            <div class="col capsulas2">
-              <h5 class="text-center"><strong>FOR YOU</strong></h5>
+            <div class="col-3 capsulas2">
+              <h5 class="text-center"><strong>JUST FOR YOU</strong></h5>
                 <% for(let store of stores){ %> 
                     <button class="btn btn-light"><a class="shop" href="/stores/<%= store._id %>"><%= store.name %> by <%= store.owner %> </a></button>
                 <% } %>
             </div>
-            <div class="col capsulas2">
-                <h5 class="text-center"><strong>FLASH DISCOUNTS</strong></h5>                
+            <div class="col-3 capsulas2">
+                <h5 class="text-center"><strong>FLASH OFFERS</strong></h5>                
                   <% for(let store of stores){ %> 
                     <button class="btn btn-light"><a class="shop" href="/stores/<%= store._id %>"><%= store.name %> by <%= store.owner %> </a></button>
                   <% } %> 

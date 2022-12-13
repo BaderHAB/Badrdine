@@ -1,32 +1,22 @@
 <header>
     <div class="container-fluid">
-        <div  class="head row align-items-center justify-content-between">
-            <div class="col text-center"><h1><a href="/">Shop2You</a></h1></div>
-            <!-- <div class="seleccion col">
-                <a href="/stores">DISCOVER</a>
-            </div> -->
-            <div class="seleccion col text-left">
-                <a href="/stores">SHOPS</a>
+        <div class="header row">
+            <div class="col-2">
+                <a href="/"><img class="logo" src="/fonts/logo2.png" alt="pageLogo"></a>
             </div>
-            <div class="seleccion col text-left">
-                <a href="/products/categories">CATEGORIES</a>
-            </div> 
-            <div class="col-4 ">
+            <div class="col-5">
                 <form action="/search" method="post" class="input-group">
                     <input type="search" name="q" id="q" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
-                    <button class="btn btn-outline" >Search</button>
+                    <button class="btn btn-outline-success" >Search</button>
                 </form> 
             </div>
-            <div class="col text-right"> 
-                <% if(!currentUser){ %> 
-                    <a href="/login"><button class="btn btn-outline" >Welcome, Login!</button></a>
-                <% }else if(currentUser) { %> 
-                    <a href="/logout"><button class="btn btn-outline">Click to Logout</button></a>
-                    <% } %> 
-                </div>
-
-            <div class="menuDesp col-2 text-center">
-                <img class="desplegable" src="\fonts\menu.png" alt="menu">
+            <div class="col-5 text-center">
+                <nav>
+                    <a href="/products">Discover</a>
+                    <a href="/stores">Shops</a>
+                    <a href="/about">About Us</a>
+                    <a href="/login"><img style="height: 24.8px;" src="/fonts/login.jpg" alt=""></a>
+                </nav>
             </div>
         </div>
     </div>

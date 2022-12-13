@@ -1,37 +1,37 @@
 html ,body{height: 100%;}
-
 .info{
     height: 80vh;
     width: 100%;
     margin:0;
     padding:0;
-    background-color:#EAEDED;
 }
 .stores{
     height: 100%;
     width: 100%;
     align-content: center;
     justify-content: space-evenly;
+    margin:0;
+    padding:0;
 }
 
 .capsulas{
     background-color: white;
     border: 1px solid gray;
-    box-shadow: #8787FB 0px 0px 0px 3px;
+    box-shadow: #00b389 0px 0px 0px 3px;
     border-radius: 5px;
     height: 80%;
     max-width: 35%;
     padding-top: 10px;
-    color: #8787FB;
+    color: #00b389;
 }   
 .capsulas ul{
     list-style-type: none;
 }
 .capsulas2{
-    color: #8787FB;
+    color: #00b389;
     background-color: white;
     border: 1px solid gray;
-    box-shadow: #8787FB 0px 0px 0px 3px;
+    box-shadow: #00b389 0px 0px 0px 3px;
     border-radius: 5px;
     height: 80%;
     max-width: 30%;
