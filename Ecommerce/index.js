@@ -29,8 +29,8 @@ const user = require('./models/user');
 
 
 //DB CONNECTION
-mongoose.connect('mongodb+srv://Bader:w1a2t3e4r5@cluster0.eywmrzr.mongodb.net/store?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology:true});
-const db = mongoose.connection;
+const mongooseConnect= await mongoose.connect('mongodb+srv://Bader:w1a2t3e4r5@cluster0.eywmrzr.mongodb.net/store?retryWrites=true&w=majority',{useNewUrlParser:true, useUnifiedTopology:true});
+const db = await mongooseConnect.connection;
 db.on('error', error=>console.log(error))
 db.once('open', ()=>{console.log('Connected to mongoose')})
 
