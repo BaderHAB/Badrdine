@@ -32,10 +32,6 @@ const user = require('./models/user');
 mongoose.connect('mongodb+srv://Bader:w1a2t3e4r5@cluster0.eywmrzr.mongodb.net/store?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
-}).then(() => {
-  console.log('Connected to mongoose')
-}).catch(error => {
-  console.log(error)
 })
 const db = mongoose.connection;
 db.on('error', error=>console.log(error), mongoose.connection)
@@ -53,12 +49,6 @@ app.use(methodOverride('_method'));
 app.use(CookieParser('secret'));
 app.use(session(sessionOption))
 app.use(flash());
-app.use((req,res, next)=>{
-    res.locals.currentUser = req.user;
-    res.locals.success = req.flash('success')
-    res.locals.error= req.flash('error')
-    next();
-})
 
 //PASSPORT
 app.use(passport.initialize());
@@ -67,6 +57,15 @@ passport.use(new LocalStrategy(User.authenticate()));
 
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+app.use((req,res,next)=>{
+    res.locals.current = req.user;
+    res.locals.success = req.flash('success')
+    res.locals.error= req.flash('error')
+    next();
+})
+
+
 
 //ROUTES DEPLOYMENT
 app.use('', home)

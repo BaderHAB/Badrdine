@@ -15,7 +15,11 @@
                     <a href="/products">Discover</a>
                     <a href="/stores">Shops</a>
                     <a href="/about">About Us</a>
-                    <a href="/login"><img style="height: 24.8px;" src="/fonts/login.jpg" alt=""></a>
+                    <% if(!current){%> 
+                        <a href="/login"><img style="height: 24.8px;" src="/fonts/login.jpg" alt=""></a>
+                      <% }else{ %>
+                        <a href="/logout">Logout!</a>
+                      <% } %> 
                 </nav>
             </div>
         </div>
