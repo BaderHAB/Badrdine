@@ -1,0 +1,65 @@
+html ,body{height: 100%;}
+.info{
+    height: 80vh;
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+.stores{
+    height: 100%;
+    width: 100%;
+    align-content: center;
+    justify-content: space-evenly;
+    margin:0;
+    padding:0;
+}
+
+.capsulas{
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: #00b389 0px 0px 0px 3px;
+    border-radius: 5px;
+    height: 80%;
+    max-width: 35%;
+    padding-top: 10px;
+    color: #00b389;
+}   
+.capsulas ul{
+    list-style-type: none;
+}
+.capsulas2{
+    color: #00b389;
+    background-color: white;
+    border: 1px solid gray;
+    box-shadow: #00b389 0px 0px 0px 3px;
+    border-radius: 5px;
+    height: 80%;
+    max-width: 30%;
+    padding-top: 10px;
+}   
+.capsulas2 ul{
+    list-style-type: none;
+}
+.shop{
+    color: black;
+}
+.shop:hover{
+    color: black;
+    text-decoration: none;
+}
+@media (max-width:700px) {
+    .stores{
+        flex-direction: column;
+        margin: 0;
+        padding: 10px 10px;
+    }
+    .capsulas{
+        margin-bottom: 10px;
+        max-width: 100%;
+    }
+    .capsulas2{
+        margin-bottom: 10px;
+        max-width: 100%;
+    }
+    
+}

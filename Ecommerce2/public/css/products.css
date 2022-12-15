@@ -1,0 +1,71 @@
+/* body {
+    height: 900px;
+    overflow-y: hidden;
+    overflow-x: hidden; /* hides the horizontal scroll bar */
+.tiles{
+    padding: 10px 10px;
+    margin-bottom: 0;
+    background-color: #A2D3C2;
+    border-bottom: 2px solid #00b389;
+    border-top: 2px solid #00b389;
+}
+
+.caja{
+    min-height: 76vh;
+    height: 100%;
+}
+.ajustes{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-top: 5px;
+    border-bottom: 2px solid #00b389;
+}
+
+.filtro{ 
+    padding-top: 5px;
+    background-color: #A2D3C2;
+    border-bottom: 2px solid #00b389;
+    border-right: 2px solid #00b389;
+} 
+.product{
+    margin-left:20px;
+    padding-top: 5px;
+    display: inline-block;
+    width: 120px;
+    height: fit-content;
+    padding: 10px 10px;
+}
+
+.ajustes, .pageSwitch a{
+    color: black;
+}
+.ajustes, .pageSwitch a:hover{
+    color: black;
+}
+.ajustes img {
+    width: 90px;
+    background-color: gray;
+}
+
+.pageSwitch{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8px;
+    height: 8vh;
+    background-color: #A2D3C2;
+}
+ 
+@media (max-width:760px){
+    .filtro{
+        display: none;
+        border-bottom: 0;
+    }
+}  
+@media (width:768px){
+    .filtro label{
+        font-size: 11px;
+    }
+   
+}  

@@ -1,0 +1,128 @@
+html ,body{height: 100%;}
+*{
+    font-family: ShopifySans, Helvetica, Arial, sans-serif;
+}
+
+.alert{
+    position: absolute;
+    right: 180px;
+}
+.head{
+    padding-top: 10px;
+    background-color:#d0b49f;
+    border-bottom: 2px solid black;
+    flex-direction: row;
+
+}
+.head .seleccion{
+    max-width: 150px;
+}
+.head button{
+    color: white;
+    border-color: white;
+}
+
+.head a{
+    text-decoration: none;
+    color: white;
+}
+.head button:hover{
+    color: white;
+    border-color: white;
+}
+
+.head a:hover{
+    text-decoration: none;
+    color: white;
+} 
+
+/**/
+.seleccion{
+    font-size: 15px;
+}
+.menuDesp{
+    display: none;
+
+}
+/*FIRST SECTION*/
+.undHead{
+    height:500px;
+    flex-wrap: wrap;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    background-color: #d0b49f;
+    border-bottom: 2px solid black;
+    justify-content: center;
+    color: white;
+    flex-shrink: 1;
+}
+.menu h4{
+    font-size: 40px;
+}
+.menu a{
+    color: white;
+}
+
+.categories {
+    height:500px;
+    border-left: 2px solid black;
+    background-image: url('/fonts/background.jpg');
+    background-size: cover;
+    border-bottom: 2px solid black;
+}
+
+.info{
+    height:48vh;
+    background-color: #f1e7dd;
+}
+.footer{
+    background-color: black;
+    height:50px;
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+}
+
+.about{
+    height: 100%;
+    align-content: center;
+}
+
+.footer a {
+    color: white;
+}
+
+
+@media (max-width: 750px){
+    .head  h1{
+        font-size:32px;
+    }
+    .undHead{
+        flex-direction: column;
+        flex-shrink: 2;
+    }
+    .seleccion,.head button,.head form{
+        display: none;
+    }
+    .menu h4{
+        margin-top: 8px;
+        font-size: 25px;
+    }
+    .menuDesp{
+        width: 20px;
+        height: 20px;
+    }
+    .info h1{
+        font-size: 28px;
+    }
+
+}
+
+@media (width: 768px){
+    .seleccion{
+        font-size: 10px;
+    }
+}

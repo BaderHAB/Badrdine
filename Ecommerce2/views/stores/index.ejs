@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../partials/styles') %>
+    <link rel="stylesheet" href="/css/stores.css">
+    <title>All Stores</title>
+</head>
+<body>
+    <%- include('../partials/flash') %>
+    <%- include('../partials/nav') %> 
+    <div class="info container-fluid">
+        <div class="stores row">
+            <div class="col capsulas">
+              <h5 class="text-center"><strong>WEEKLY DISCOUNTED SHOPS</strong></h5>
+                <% for(let store of stores){ %> 
+                    <button class="btn btn-light"><a class="shop" href="/stores/<%= store._id %>"><%= store.name %> by <%= store.owner %> </a></button>
+                <% } %> 
+            </div>
+            <div class="col capsulas ">
+              <h5 class="text-center"><strong>MOST POPULAR SHOPS</strong></h5>
+                <% for(let store of stores){ %> 
+                    <button class="btn btn-light"><a class="shop" href="/stores/<%= store._id %>"><%= store.name %> by <%= store.owner %> </a></button>
+                <% } %> 
+            </div>
+        </div>
+    </div>
+    <div class="info container-fluid">
+        <div class="stores row">
+            <div class="col-3 capsulas2">
+              <h5 class="text-center"><strong>XMAS SPECIALS</strong></h5>
+                <% for(let store of stores){ %> 
+                    <button class="btn btn-light"><a class="shop" href="/stores/<%= store._id %>"><%= store.name %> by <%= store.owner %> </a></button>
+                <% } %> 
+            </div>
+            <div class="col-3 capsulas2">
+              <h5 class="text-center"><strong>JUST FOR YOU</strong></h5>
+                <% for(let store of stores){ %> 
+                    <button class="btn btn-light"><a class="shop" href="/stores/<%= store._id %>"><%= store.name %> by <%= store.owner %> </a></button>
+                <% } %>
+            </div>
+            <div class="col-3 capsulas2">
+                <h5 class="text-center"><strong>FLASH OFFERS</strong></h5>                
+                  <% for(let store of stores){ %> 
+                    <button class="btn btn-light"><a class="shop" href="/stores/<%= store._id %>"><%= store.name %> by <%= store.owner %> </a></button>
+                  <% } %> 
+              </div>
+        </div>
+    </div>
+    <%- include('../partials/footes') %> 
+</body>
+</html>

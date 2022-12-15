@@ -1,0 +1,67 @@
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    
+}
+*{
+    font-family: ShopifySans, Helvetica, Arial, sans-serif;
+}
+.background{
+    height: 100%;
+    opacity: 0.8;
+    background-image:  radial-gradient(#000000 0.5px, transparent 0.5px), radial-gradient(#000000 0.5px, #d0b49f 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;
+}
+.head{
+    padding-top: 15px;
+    color: black;
+}
+.create{
+    display: flex;
+    padding-top: 60px;
+    height:90.5vh;
+    justify-content: center;
+}
+.form{
+    position: absolute;
+    flex-wrap: wrap;
+    padding-top: 60px;
+    border-radius: 15px;
+    height: 70vh;
+    width: 60%;
+    background-color: #f8f8f8;
+    box-shadow: 0px 0px 10px black;
+    align-items:flex-start;
+    justify-content:end;
+    float: left;
+}
+.logoS{
+    margin-left: 10px;
+    width: 500px;
+    height: 90%;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+
+@media (max-width: 500px){
+    .create{
+        height:100vh;
+    }
+    .form{
+        padding-top: 4px;
+        padding-right: 6px;
+        height: 80vh;
+    }
+    .logoS{
+        height: 50px;
+    }
+    .logoS h4{
+        font-size: 15px;
+    }
+}
+
+

@@ -1,0 +1,64 @@
+html ,body{height: 100%;}
+
+body .fullbody{
+    height: 100%;
+    /* background-color: #84a98c; */
+    opacity: 0.8;
+    background-image:  radial-gradient(#000000 0.5px, transparent 0.5px), radial-gradient(#000000 0.5px, #00b389 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;
+}
+ .alert{
+    position: absolute;
+    left: 0px;
+} 
+.box{
+    display: flex;
+    justify-content: center;
+    height: 100%
+}
+.regForm{
+    position: static;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 90%;
+    background-color: #fdfff5;
+    opacity: 0.9;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px gray;
+}
+.regForm div{
+    width: 100%;
+}
+.title{
+    margin-bottom: 20px;
+}
+
+.regForm button{
+    margin-top: 10px;
+}
+
+.regForm button:hover{
+    background-color: #00b389;
+    border: 0;
+}
+.regForm a{
+    color: black;
+}
+
+.regForm a:hover{
+    color: #00b389;
+    text-decoration: none;
+}
+
+@media (max-width:426px){
+    .regForm{
+        height: 96%;
+        width: 94%;
+    }
+}
+
+
+
