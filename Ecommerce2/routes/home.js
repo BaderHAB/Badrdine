@@ -22,6 +22,10 @@ router.get('/search/page2', async(req,res)=>{
     res.render('products/nextPage' , {allProduct})
 })
 
+router.get('/needto', (req,res)=>{
+    res.render('needTo/needTo')
+})
+
 
 
 

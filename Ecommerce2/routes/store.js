@@ -14,7 +14,7 @@ router.get('', async (req,res)=>{
 })
 
 router.get('/new',requireLogin, (req,res) =>{
-        res.render('stores/new')
+        res.render('/new')
 })
 
 router.post('', requireLogin, async (req,res)=>{
