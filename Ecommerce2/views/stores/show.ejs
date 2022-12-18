@@ -5,11 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= store.name %> </title>
+    <link rel="stylesheet" href="stores">
+    <%- include('../partials/styles') %>
 </head>
 <body>
-    <h1>Store: <%= store.name %></h1>
-    <h3>Owner: <%= store.owner %> </h3>
-    <h3>Location: <%= store.location %> </h3>
+    <%- include('../partials/nav') %>
+    <div>
+    <h1><%= store.name %></h1>
+    <small id="storeInfo" class="text-muted">
+        <a href="#">Click for store info!</a>
+    </small>
+    </div>
+    <h3 class="text-right">By: <%= store.owner %> </h3>
     <h3>Contact email: <%= store.email %> </h3>
     <a href="/stores">Back to all stores</a>
     <a href="/stores/<%= store._id %>/product/new">Add a product</a>
@@ -22,5 +29,6 @@
     <form method="POST" action="/stores/<%= store._id %>?_method=DELETE" >
         <button>Delete</button>
     </form>
+    <%- include('../partials/footes') %>
 </body>
 </html>
